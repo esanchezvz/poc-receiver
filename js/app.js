@@ -13,21 +13,21 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'INIT_COMMUNICATION':
         playerDOM.setAttribute('data-plyr-provider', data.provider);
         playerDOM.setAttribute('data-plyr-embed-id', data.videoId);
-        player = new Plyr(playerDOM, {seekTime: 10});
+        player = new Plyr(playerDOM, { seekTime: 10 });
         castReady = true;
-  
-        player.on('ready', function() {
+
+        player.on('ready', function () {
           // TODO hide splashscreen
           player.play();
         });
-        
+
         break;
       case 'PLAY_VIDEO':
         player.play();
         break;
-      case 'PAUSE_VIDEO':eo
+      case 'PAUSE_VIDEO':
         player.pause();
-      break;
+        break;
       case 'REWIND':
         player.rewind();
         break;
